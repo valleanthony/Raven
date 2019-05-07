@@ -104,12 +104,6 @@ public class WordReader {
 
         } // This loop checks the items in the Words [] array against all the items in the good arraylist.
 
-        System.out.println("Good word count: " + getGoodWordCount());
-        System.out.println("bad word count "+ getBadWordCount());
-
-
-
-
 
     }
 

@@ -11,7 +11,7 @@ public class Main {
         String userInput;
         String userName;
         int goodwordcount = 0;
-        int bacwordcount = 0;
+        int badwordcount = 0;
 
 
         System.out.println("What is your name");
@@ -27,16 +27,22 @@ public class Main {
                 mainSwitch = false;
             }
             WordReader a1 = new WordReader();
+            ResponseGen r1 = new ResponseGen();
             a1.setUserInput(userInput);
             chatSession.add(userInput); // This will save all the userInputs and any items returned from the class as a chat history.
+            goodwordcount =goodwordcount+a1.getGoodWordCount();
+            badwordcount = badwordcount +a1.getBadWordCount();
+            r1.setBwordCount(badwordcount);
+            r1.setGwordCount(goodwordcount);
+            System.out.println(r1.getResponse());
+            chatSession.add(r1.getResponse());
 
-
-
-            System.out.println(chatSession);
 
 
 
         }
+        System.out.println(chatSession);
+
 
     }
 }
