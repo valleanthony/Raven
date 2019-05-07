@@ -10,6 +10,9 @@ public class WordReader {
     // Class Vars
 
     private String userInput;
+    private int goodWordCount =0;
+    private int badWordCount = 0;
+
 
     //ArrayList
     ArrayList<String> goodWords = new ArrayList<String>();
@@ -18,6 +21,16 @@ public class WordReader {
     //end class Vars
 
     //Getters & setters
+
+
+    public int getGoodWordCount() {
+        return goodWordCount;
+    }
+
+    public int getBadWordCount() {
+        return badWordCount;
+    }
+
     public String getUserInput() {
         return userInput;
     }
@@ -50,24 +63,53 @@ public class WordReader {
         badWords.add("bad");
         badWords.add("sad");
         badWords.add("tired");
+        badWords.add("angry");
+        badWords.add("anxious");
+        badWords.add("hungry");
+        badWords.add("moody");
+        badWords.add("afraid");
     }
 
 
 
 
 
-    private void wordBreaker(String userInput, Array Words){
+    public void wordBreaker(String userInput, String[] words){
 
 
-        String words[] = userInput.split(" ");
+        words = userInput.split(" ");
+
+        for (String items:words){
+            for(String wordsInArray:goodWords){
+                if (items.equalsIgnoreCase(wordsInArray)){
+                    goodWordCount = goodWordCount +1;
+                }
+
+
+            }
+            for (String wordsInArray:badWords){
+                if(items.equalsIgnoreCase(wordsInArray)){
+                    badWordCount =badWordCount+1;
+                }
+            }
+
+        } // This loop checks the items in the Words [] array against all the items in the good arraylist.
+
+
 
 
     }
-
-    public int counterFunction(){
-
-        return null;
-    }
+//
+//    public int goodCounter(){
+//
+//
+//        return goodWordCount;
+//    }
+//
+//    public int badCounter(){
+//
+//        return badWordCount;
+//    }
 
 
 }

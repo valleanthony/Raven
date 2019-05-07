@@ -27,6 +27,7 @@ public class Main {
             WordReader a1 = new WordReader();
             a1.setUserInput(userInput);
             chatSession.add(userInput); // This will save all the userInputs and any items returned from the class as a chat history.
+            a1.wordBreaker();
 
         }
 
