@@ -52,6 +52,7 @@ public class WordReader {
     // Start Constructor
 
     public WordReader() {
+        wordsInmethods();
     }
     public WordReader(String userInput) {
         this.userInput = userInput;
@@ -84,7 +85,7 @@ public class WordReader {
 
 
     public void wordBreaker(String userInput){
-        wordsInmethods();
+//        wordsInmethods();
         String [] words = userInput.split(" ");
 
         for (String items:words){

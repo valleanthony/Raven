@@ -29,9 +29,12 @@ public class Main {
             WordReader a1 = new WordReader();
             ResponseGen r1 = new ResponseGen();
             a1.setUserInput(userInput);
-            chatSession.add(userInput); // This will save all the userInputs and any items returned from the class as a chat history.
+            chatSession.add(userName+userInput); // This will save all the userInputs and any items returned from the class as a chat history.
             goodwordcount =goodwordcount+a1.getGoodWordCount();
             badwordcount = badwordcount +a1.getBadWordCount();
+            System.out.println(goodwordcount);
+            System.out.println(badwordcount);
+
             r1.setBwordCount(badwordcount);
             r1.setGwordCount(goodwordcount);
             System.out.println(r1.getResponse());
@@ -42,6 +45,7 @@ public class Main {
 
         }
         System.out.println(chatSession);
+        System.out.println();
 
 
     }
