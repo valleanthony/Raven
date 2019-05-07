@@ -22,21 +22,13 @@ public class WordReader {
 
     //Getters & setters
 
-
-    public int getGoodWordCount() {
-        return goodWordCount;
-    }
-
-    public int getBadWordCount() {
-        return badWordCount;
-    }
-
     public String getUserInput() {
         return userInput;
     }
 
     public void setUserInput(String userInput) {
         this.userInput = userInput;
+        wordBreaker(userInput);
     }
     //end getters & setters
 
@@ -74,42 +66,42 @@ public class WordReader {
 
 
 
-    public void wordBreaker(String userInput, String[] words){
+    public void wordBreaker(String userInput){
 
 
-        words = userInput.split(" ");
+        String [] words = userInput.split(" ");
 
         for (String items:words){
             for(String wordsInArray:goodWords){
                 if (items.equalsIgnoreCase(wordsInArray)){
-                    goodWordCount = goodWordCount +1;
+                    goodWordCount ++;
                 }
 
 
             }
             for (String wordsInArray:badWords){
                 if(items.equalsIgnoreCase(wordsInArray)){
-                    badWordCount =badWordCount+1;
+                   badWordCount++;
                 }
             }
 
         } // This loop checks the items in the Words [] array against all the items in the good arraylist.
 
+        System.out.println("Good word count: " + goodWordCount);
+        System.out.println("bad word count "+ badWordCount);
+
 
 
 
     }
-//
-//    public int goodCounter(){
-//
-//
-//        return goodWordCount;
-//    }
-//
-//    public int badCounter(){
-//
-//        return badWordCount;
-//    }
 
+
+    public int getGoodWordCount() {
+        return goodWordCount;
+    }
+
+    public int getBadWordCount() {
+        return badWordCount;
+    }
 
 }
