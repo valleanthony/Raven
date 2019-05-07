@@ -10,6 +10,8 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         String userInput;
         String userName;
+        int goodwordcount = 0;
+        int bacwordcount = 0;
 
 
         System.out.println("What is your name");
@@ -27,6 +29,9 @@ public class Main {
             WordReader a1 = new WordReader();
             a1.setUserInput(userInput);
             chatSession.add(userInput); // This will save all the userInputs and any items returned from the class as a chat history.
+
+
+
             System.out.println(chatSession);
 
 

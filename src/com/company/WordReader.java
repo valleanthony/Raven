@@ -10,8 +10,8 @@ public class WordReader {
     // Class Vars
 
     private String userInput;
-    private int goodWordCount =0;
-    private int badWordCount = 0;
+     private int goodWordCount = 0;
+     private int badWordCount = 0;
 
 
     //ArrayList
@@ -21,6 +21,23 @@ public class WordReader {
     //end class Vars
 
     //Getters & setters
+    public void setBadWordCount() {
+        this.badWordCount = badWordCount++;
+    }
+
+    public void setGoodWordCount() {
+        this.goodWordCount = goodWordCount++;
+    }
+
+    public int getGoodWordCount() {
+        return goodWordCount;
+    }
+
+    public int getBadWordCount() {
+        return badWordCount;
+    }
+
+
 
     public String getUserInput() {
         return userInput;
@@ -30,19 +47,20 @@ public class WordReader {
         this.userInput = userInput;
         wordBreaker(userInput);
     }
-    //end getters & setters
 
+    //end getters & setters
     // Start Constructor
+
     public WordReader() {
     }
-
     public WordReader(String userInput) {
         this.userInput = userInput;
     }
 
-    //End Constructors
 
+    //End Constructors
     //Adding words to the Good Arraylist
+
     private void wordsInmethods(){
         goodWords.add("good");
         goodWords.add("glad");
@@ -65,43 +83,35 @@ public class WordReader {
 
 
 
-
     public void wordBreaker(String userInput){
-
-
+        wordsInmethods();
         String [] words = userInput.split(" ");
 
         for (String items:words){
             for(String wordsInArray:goodWords){
+                //System.out.println(wordsInArray);
                 if (items.equalsIgnoreCase(wordsInArray)){
-                    goodWordCount ++;
+                    goodWordCount = goodWordCount +1;
                 }
-
 
             }
             for (String wordsInArray:badWords){
+                //System.out.println(wordsInArray);
                 if(items.equalsIgnoreCase(wordsInArray)){
-                   badWordCount++;
+                   badWordCount = badWordCount + 1;
                 }
             }
 
         } // This loop checks the items in the Words [] array against all the items in the good arraylist.
 
-        System.out.println("Good word count: " + goodWordCount);
-        System.out.println("bad word count "+ badWordCount);
+        System.out.println("Good word count: " + getGoodWordCount());
+        System.out.println("bad word count "+ getBadWordCount());
+
 
 
 
 
     }
 
-
-    public int getGoodWordCount() {
-        return goodWordCount;
-    }
-
-    public int getBadWordCount() {
-        return badWordCount;
-    }
 
 }
