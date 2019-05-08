@@ -17,13 +17,14 @@ public class Main {
         System.out.println("What is your name");
         userName = keyboard.nextLine() + " :";
         ArrayList<String> chatSession = new ArrayList<String>();
-        chatSession.add(userName); // Start saving chat session with userName:
+        chatSession.add(userName +" has entered the chat"); // Start saving chat session with userName:
 
 
         System.out.println("Good Morning,how are you feeling today?(if you would like to exit enter 'Q')");
         while(mainSwitch){
             userInput = keyboard.nextLine();
             if(userInput.equalsIgnoreCase("Q")){
+
                 mainSwitch = false;
             }
             WordReader a1 = new WordReader();
@@ -37,15 +38,25 @@ public class Main {
 
             r1.setBwordCount(badwordcount);
             r1.setGwordCount(goodwordcount);
-            System.out.println(r1.getResponse());
-            chatSession.add(r1.getResponse());
+            if (mainSwitch ==true) { // this allows no response to be sent from the responseGen class if user enters Q
+                System.out.println(r1.getResponse());
+                chatSession.add("Raven: " + r1.getResponse());
+            }
 
 
 
 
         }
-        System.out.println(chatSession);
         System.out.println();
+        System.out.println();
+        System.out.println("----------------------");
+        for (int i =0; i<chatSession.size();i++) {
+            System.out.println(chatSession.get(i));
+        }
+        System.out.println("----------------------");
+        System.out.println();
+        System.out.println();
+
 
 
     }

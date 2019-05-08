@@ -1,6 +1,6 @@
 package com.company;
 
-import sun.swing.SwingUtilities2;
+
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -79,6 +79,9 @@ public class WordReader {
         badWords.add("hungry");
         badWords.add("moody");
         badWords.add("afraid");
+        badWords.add("mean");
+        badWords.add("mad");
+
     }
 
 
