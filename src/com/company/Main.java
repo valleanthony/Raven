@@ -33,8 +33,6 @@ public class Main {
             chatSession.add(userName+userInput); // This will save all the userInputs and any items returned from the class as a chat history.
             goodwordcount =goodwordcount+a1.getGoodWordCount();
             badwordcount = badwordcount +a1.getBadWordCount();
-            System.out.println(goodwordcount);
-            System.out.println(badwordcount);
 
             r1.setBwordCount(badwordcount);
             r1.setGwordCount(goodwordcount);
@@ -56,6 +54,9 @@ public class Main {
         System.out.println("----------------------");
         System.out.println();
         System.out.println();
+        System.out.println(userName +" had");
+        System.out.println( goodwordcount +" Happy word");
+        System.out.println(badwordcount + " Sad word");
 
 
 

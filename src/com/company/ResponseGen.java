@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class ResponseGen {
     private int GwordCount = 0;
@@ -48,7 +50,7 @@ public class ResponseGen {
             test = okresposne.get(0);
         }
         return test;
-//        return response;
+
     }
 
     public void setResponse(String response) {
@@ -57,8 +59,25 @@ public class ResponseGen {
 
     private void addingWordstoarrays() {
         goodResponse.add("I am so happy for you...Yay..");
+        goodResponse.add("that's great...");
+        goodResponse.add("is that so...");
+        goodResponse.add("hold up...");
+
+
+
         badResponse.add("REALLY? TELL ME MORE");
+        badResponse.add("WHAT ELSE HAPPENED?");
+        badResponse.add("HOW DID THAT MAKE YOU FEEL?");
+        badResponse.add("WOW! PLEASE ELABORATE ");
+
+
         okresposne.add("meh");
+        okresposne.add("That's not that interesting");
+        okresposne.add("sounds fine");
+        okresposne.add("sure");
+        Collections.shuffle(okresposne);
+        Collections.shuffle(badResponse);
+        Collections.shuffle(goodResponse);
     }
 
 
