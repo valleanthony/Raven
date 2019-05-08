@@ -12,6 +12,7 @@ public class Main {
         String userName;
         int goodwordcount = 0;
         int badwordcount = 0;
+        int responseCounter = 0;
 
 
         System.out.println("What is your name");
@@ -39,6 +40,7 @@ public class Main {
             if (mainSwitch ==true) { // this allows no response to be sent from the responseGen class if user enters Q
                 System.out.println(r1.getResponse());
                 chatSession.add("Raven: " + r1.getResponse());
+                responseCounter++;
             }
 
 
@@ -50,6 +52,7 @@ public class Main {
         System.out.println("----------------------");
         for (int i =0; i<chatSession.size();i++) {
             System.out.println(chatSession.get(i));
+
         }
         System.out.println("----------------------");
         System.out.println();
@@ -57,6 +60,31 @@ public class Main {
         System.out.println(userName +" had");
         System.out.println( goodwordcount +" Happy word");
         System.out.println(badwordcount + " Sad word");
+        Invoice I1 =new Invoice();
+        I1.setRavenOutputCounter(responseCounter);
+        I1.setUsername(userName);
+        System.out.println("Please enter your address:");
+        userInput = keyboard.nextLine();
+        I1.setAddress(userInput);
+        System.out.println("Please enter your city:");
+        userInput = keyboard.nextLine();
+        I1.setCity(userInput);
+        System.out.println("Please enter your zip:");
+        userInput = keyboard.nextLine();
+        I1.setZip(userInput);
+        System.out.println("Please enter your State:");
+        userInput = keyboard.nextLine();
+        I1.setState(userInput);
+
+        System.out.println("INVOICE:");
+        I1.displayInvoicebill();
+        System.out.println( "Your bill is"+"$"+I1.getTotal());
+
+
+
+
+
+
 
 
 
